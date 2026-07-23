@@ -162,4 +162,4 @@ You must then supply your own `client::Backend`.
 
 ## License
 
-- MIT license ([LICENSE](LICENSE-MIT))
+- MIT license ([LICENSE](LICENSE))
