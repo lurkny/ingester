@@ -11,7 +11,6 @@ use http::{HeaderMap, StatusCode};
 use ingester::{Endpoint, Error, Ingester, NoRateLimit, Request, Response, client, rate_limit};
 use url::Url;
 
-
 #[derive(Clone, Default)]
 struct MockClient {
     responses: Arc<Mutex<VecDeque<Response>>>,
@@ -57,7 +56,6 @@ impl rate_limit::Backend for CountingRateLimit {
     }
 }
 
-
 /// Serves pages of `{"items": [...], "next": "<cursor>" | null}`; the next
 /// request's URL embeds the cursor from the previous response.
 struct CursorEndpoint {
@@ -98,7 +96,6 @@ impl Endpoint for CursorEndpoint {
             .collect())
     }
 }
-
 
 #[tokio::test]
 async fn cursor_pagination_flows_through_responses() {

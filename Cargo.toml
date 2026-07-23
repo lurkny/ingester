@@ -4,6 +4,7 @@ version = "0.0.1"
 description = "Turn paginated APIs into rate-limited async streams of parsed items"
 readme = "README.md"
 license = "MIT"
+repository = "https://github.com/lurkny/ingester"
 keywords = ["scraping", "ingestion"]
 categories = ["web-programming::http-client", "asynchronous"]
 edition = "2024"

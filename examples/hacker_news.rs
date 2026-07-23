@@ -63,7 +63,9 @@ impl Endpoint for FrontPage {
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     // A maximum of 2 requests each second.
-    let rate_limit = RateLimit::from_quota(Quota::per_second(NonZeroU32::new(2).expect("dev can't read and constructed a NonZeroU32 with 0")));
+    let rate_limit = RateLimit::from_quota(Quota::per_second(
+        NonZeroU32::new(2).expect("dev can't read and constructed a NonZeroU32 with 0"),
+    ));
 
     let stories = ingest(FrontPage::new())
         .with_rate_limit(rate_limit)
